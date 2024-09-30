@@ -19,4 +19,14 @@ class Character < ApplicationRecord
 
     return the_movie
   end
+
+  def actor
+    my_actor_id = self.actor_id
+
+    matching_actors = Actor.where({ :id => my_actor_id })
+
+    the_actor = matching_actors.at(0)
+
+    return the_actor
+  end
 end
